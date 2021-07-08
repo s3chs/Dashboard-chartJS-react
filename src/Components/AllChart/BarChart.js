@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2";
 import { octet } from "webidl-conversions";
 import fullData from "../../context/fulldata";
 
-export default function BarChart() {
+export default function BarChart(props) {
   console.log(fullData);
   return (
     <div className="chart-container">
@@ -20,8 +20,8 @@ export default function BarChart() {
           ],
           datasets: [
             {
-              label: "Chiffres bimestriels",
-              data: fullData["2020"].chart1,
+              label: props.name,
+              data: props.data,
               backgroundColor: [
                 "rgba(255, 99, 132, 0.8)",
                 "rgba(54, 162, 235, 0.8)",
